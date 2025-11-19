@@ -2,7 +2,13 @@
   "name": "gpu-server-viewer",
   "displayName": "GPU Server Viewer",
   "description": "Monitor remote GPU servers via SSH",
-  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Riku-0801/gpu-server-observer.git"
+  },
+  "version": "1.0.1",
+  "icon": "resources/icon.png",
+  "publisher": "gpu-server-viewer",
   "engines": {
     "vscode": "^1.80.0"
   },
@@ -17,7 +23,7 @@
         {
           "id": "gpu-server-viewer",
           "title": "GPU Viewer",
-          "icon": "resources/gpu-icon.svg"
+          "icon": "resources/icon.svg"
         }
       ]
     },
@@ -25,7 +31,8 @@
       "gpu-server-viewer": [
         {
           "id": "gpuServerList",
-          "name": "Servers"
+          "name": "Servers",
+          "icon": "resources/icon.svg"
         }
       ]
     },

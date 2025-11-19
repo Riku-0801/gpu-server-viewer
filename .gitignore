@@ -1,2 +1,4 @@
 node_modules/
 out/
+# for MacOS
+.DS_Store
