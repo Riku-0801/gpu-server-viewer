@@ -20,9 +20,11 @@ View detailed status (GPU utilization, temperature, memory usage) for each GPU o
 
 ### Key Features
 - **Multi-Server Monitoring**: Monitors hosts defined in `~/.ssh/config` or specified in settings.
+- **Local SSH Config Support**: Works seamlessly even when connected to a remote server (Remote-SSH), using your local SSH configuration.
 - **SSH Connection**: Connect to target servers via VSCode Remote SSH with a single click.
 - **Visibility Configuration**: Easily select or hide monitored servers via GUI.
-- **Auto-Refresh**: Status is automatically updated every 5 seconds.
+- **Auto-Refresh**: Status is automatically updated (configurable).
+
 ## Requirements
 
 - `ssh` command must be available on the local machine.
@@ -36,6 +38,8 @@ This extension has the following settings:
 * `gpu-server-viewer.sshConfigPath`: Path to the SSH configuration file (Default: `~/.ssh/config`).
 * `gpu-server-viewer.targets`: List of hostnames to monitor (If not specified, all hosts in the SSH config file are monitored).
 * `gpu-server-viewer.ignoredHosts`: List of hostnames to exclude from the view (Can be changed from the "Configure Servers" menu).
+* `gpu-server-viewer.autoRefresh`: Enable/disable auto-refresh (Default: `true`).
+* `gpu-server-viewer.refreshInterval`: Refresh interval in seconds (Default: `5`).
 
 ## Usage
 
