@@ -3,6 +3,8 @@
 A VSCode extension to visualize GPU usage (utilization, memory, temperature, etc.) of remote GPU servers.
 It uses `ssh` and `nvidia-smi` to fetch information.
 
+→ [Install for VSCode](https://marketplace.visualstudio.com/items?itemName=gpu-server-viewer.gpu-server-viewer)
+
 ## Features
 
 ### Dashboard (List View)
