@@ -15,6 +15,10 @@
   "categories": [
     "Other"
   ],
+  "extensionKind": [
+    "ui",
+    "workspace"
+  ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
@@ -23,7 +27,7 @@
         {
           "id": "gpu-server-viewer",
           "title": "GPU Viewer",
-          "icon": "resources/icon.svg"
+          "icon": "resources/gpu-icon.svg"
         }
       ]
     },
@@ -32,7 +36,7 @@
         {
           "id": "gpuServerList",
           "name": "Servers",
-          "icon": "resources/icon.svg"
+          "icon": "resources/gpu.svg"
         }
       ]
     },
@@ -111,6 +115,16 @@
           },
           "default": [],
           "description": "List of SSH hosts to ignore"
+        },
+        "gpu-server-viewer.autoRefresh": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable auto-refresh of GPU status"
+        },
+        "gpu-server-viewer.refreshInterval": {
+          "type": "number",
+          "default": 5,
+          "description": "Refresh interval in seconds"
         }
       }
     }

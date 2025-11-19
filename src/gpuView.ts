@@ -46,8 +46,33 @@ export class GpuViewPanel {
             this._disposables
         );
 
-        // Auto-refresh every 5 seconds
-        this._timer = setInterval(() => this._update(), 5000);
+        // Auto-refresh based on configuration
+        this._setupAutoRefresh();
+
+        // Listen for configuration changes
+        this._disposables.push(
+            vscode.workspace.onDidChangeConfiguration(e => {
+                if (e.affectsConfiguration('gpu-server-viewer.autoRefresh') ||
+                    e.affectsConfiguration('gpu-server-viewer.refreshInterval')) {
+                    this._setupAutoRefresh();
+                }
+            })
+        );
+    }
+
+    private _setupAutoRefresh() {
+        if (this._timer) {
+            clearInterval(this._timer);
+            this._timer = undefined;
+        }
+
+        const config = vscode.workspace.getConfiguration('gpu-server-viewer');
+        const autoRefresh = config.get<boolean>('autoRefresh', true);
+        const interval = config.get<number>('refreshInterval', 5);
+
+        if (autoRefresh) {
+            this._timer = setInterval(() => this._update(), interval * 1000);
+        }
     }
 
     public static createOrShow(extensionUri: vscode.Uri, host?: string) {
